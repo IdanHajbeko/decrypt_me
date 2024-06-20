@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>XOR operator</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="icon" type="image/x-icon" href="../images/logo.png">
+  </head>
+  <body>
+    <div id="top" class="header">
+      <a href="../index.html"><img src="../images/logo.png" alt="logo" width="100" height="100" style="float: left;"></a>
+      <h1>XOR operator</h1>
+    </div>
+    <ul class="navbar center-navbar top-navbar">
+      <li><a href="../index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Levels</a>
+        <div class="dropdown-content">
+          <a href="#">Level 1</a>
+          <a href="#">Level 2</a>
+          <a href="#">Level 3</a>
+        </div>
+      </li>
+      <li><a href="../About_the_project/index.html">About this project</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Bitwise operators</a>
+        <div class="dropdown-content">
+          <a href="AND.html">AND &</a>
+          <a href="OR.html">OR |</a>
+          <a href="XOR.html">XOR ^</a>
+          <a href="NOT.html">NOT ~</a>
+          <a href="LeftShift.html">Left Shift <<</a>
+          <a href="RightShift.html">Right Shift >></a>
+        </div>
+      </li>
+      <li><a href="../about_me/index.html">About me</a></li>
+      <li><a href="mailto:idancode.hajbeko@gmail.com">Contact me</a></li>
+      <li><a href="https://keyserver.ubuntu.com/pks/lookup?search=idancode.hajbeko%40gmail.com&fingerprint=on&op=index">Public Key</a></li>
+    </ul>
+    <hr>
+    <p>
+      The bitwise <span style="color:#A26769">XOR</span> (exclusive OR) operator is a crucial operator in computer science and digital electronics,<br>
+      used to manipulate data at the bit level.<br>
+      This operator is represented by the symbol <span style="color:#884B58">^</span> in most programming languages.<br>
+      It performs a binary <span style="color:#A26769">XOR</span> operation on two binary numbers,<br>
+      comparing corresponding bits and producing a new binary number as the result.<br>
+    </p>
+    <h2>How It Works:</h2>
+    <p>
+      The bitwise XOR operator works by comparing each bit of its operands.<br>
+      If the bits at a given position are different, the result at that position is 1;<br>
+      otherwise, it is 0.
+    </p>
+    <h3>Truth table:</h3>
+    <table class="hover-effect_line hover-effect_single">
+      <caption>BITWISE XOR(^) OPERATOR TRUTH TABLE</caption>
+        <tr>
+          <th colspan="2">Inputs</th>
+        </tr>
+        <tr>
+          <td>Input A</td>
+          <td>Input B</td>
+          <td>Output</td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+    </table>
+    <h2>Encryption and XOR:</h2>
+    <p>
+      The XOR operator plays a vital role in the field of encryption and cryptography.<br>
+      One of the simplest forms of encryption, known as the XOR cipher, uses this operator.<br>
+      In an XOR cipher, plaintext is encrypted by applying the XOR operator to each bit of the plaintext with a corresponding bit of a key.<br>
+      The same key is then used to decrypt the ciphertext back into plaintext.<br>
+    </p>
+    <p>
+      The process can be described as follows:<br>
+      - Encryption: Ciphertext = Plaintext XOR Key<br>
+      - Decryption: Plaintext = Ciphertext XOR Key<br>
+      This method is straightforward yet surprisingly effective, especially when the key is random and as long as the plaintext.
+    </p>
+    <h3>XOR in Advanced Encryption:</h3>
+    <p>
+      Beyond simple ciphers, XOR is a fundamental component of more complex encryption algorithms.<br>
+      In the Advanced Encryption Standard (AES), XOR operations are used extensively in the various transformation steps, such as the SubBytes, ShiftRows, MixColumns, and AddRoundKey stages.<br>
+      XOR's properties ensure that each bit of the data is affected by the corresponding bit of the key, contributing to the diffusion and confusion required for strong encryption.<br>
+    </p>
+    <p>
+      Most modern encryption algorithms incorporate XOR due to its simplicity and efficiency in binary operations,<br>
+      making it a cornerstone of secure data transmission and storage.<br>
+    </p>
+    <hr>
+  </body>
+</html>
