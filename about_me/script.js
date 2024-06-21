@@ -1,14 +1,20 @@
-const BLACKLISTED_KEY_CODES = [38];
+const BLACKLISTED_KEY_CODES = [ 38 ];
 const COMMANDS = {
-  help: 'Supported commands: <span class="code">about</span>, <span class="code">experience</span>, <span class="code">education</span>, <span class="code">skills</span>, <span class="code">contact</span>',
-  about: "Hello 👋,<br>I'm Idan Hajbeko, also known as idancode, and I love hacking and programming.<br>Most of the stuff I create has errors, but who doesn't?",
-  skills: '<span class="code">Languages:</span> Python, C++, C, HTML, CSS, JavaScript, batch, PHP<br>\
+  help:
+    'Supported commands: <span class="code">about</span>, <span class="code">experience</span>, <span class="code">education</span>, <span class="code">skills</span>, <span class="code">contact</span>',
+  about:
+    "Hello 👋,<br>I'm Idan Hajbeko, also known as idancode, and I love hacking and programming.<br>Most of the stuff I create has errors, but who doesn't?",
+  skills:
+    '<span class="code">Languages:</span> Python, C++, C, HTML, CSS, JavaScript, batch, PHP<br>\
     <span class="code">Technologies:</span> SQL, MySQL,Kali Linux, Metasploit, IDA, Apache, Burp Suite, Docker<br>\
     <span class="code">Frameworks:</span> Bootstrap, Flask, Node.js(a little), TensorFlow<br>\
-    <span class="code">Subjects:</span> Cybersecurity, cryptography, Hacking, OSINT, malware analysis, malware development Machine Learning, Data Science, Data Structures and Algorithms (DSA), Artificial Intelligence, Arduino ',
-  education: "Just finished middle school.<br>But I did learn cybersecurity at university in the Israel Cyber Campus course for two years",
-  experience: "No Experience 😥, I just make things I enjoy!",
-  contact: "You can contact me on any of the following links:<br><a href='mailto:idancode.hajbeko@gmail.com' class='success link'>Email</a>, <a onclick=\"alert('Discord Username: 1idan1'); return false;\" class='success link'>Discord</a>"
+    <span class="code">Subjects:</span> Cybersecurity, cryptography, Hacking, OSINT, malware analysis, malware development Machine Learning, Data Science, Data Structures and Algorithms (DSA), Artificial Intelligence, Arduino ', 
+  education:
+    "Just finished middle school.<br>But I did learn cybersecurity at university in the Israel Cyber Campus course for two years",
+  experience:
+   "No Experience 😥, I just make things I enjoy!",
+  contact:
+"You can contact me on any of the following links:<br><a href='mailto:idancode.hajbeko@gmail.com' class='success link'>Email</a>, <a onclick=\"alert('Discord Username: 1idan1'); return false;\" class='success link'>Discord</a>"
 };
 let userInput, terminalOutput;
 
