@@ -5,5 +5,5 @@ function isMobileDevice() {
 }
 
 if (isMobileDevice()) {
-    window.location.href = "index.html";
+    window.location.href = "../please_dont_use_mobile/index.html";
 }

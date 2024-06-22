@@ -6,7 +6,18 @@
     <title>Decrypt me</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="icon" type="image/x-icon" href="images/logo.png">
-    <script src="please_dont_use_mobile/check_mobile.js"></script>
+    <script>
+      function isMobileDevice() {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    return /android|webos|iphone|ipod|blackberry|iemobile|opera mini/i.test(userAgent) && !/ipad/i.test(userAgent);
+    }
+
+    if (isMobileDevice()) {
+        window.location.href = "please_dont_use_mobile/index.html";
+    }
+
+    </script>
   </head>
   <body>
     <div id="top" class="header">
@@ -19,7 +30,7 @@
       <li class="dropdown">
         <a href="javascript:void(0)" class="dropbtn">Levels</a>
         <div class="dropdown-content">
-          <a href="#">Level 1</a>
+          <a href="levels/level1.html">Level 1</a>
           <a href="#">Level 2</a>
           <a href="#">Level 3</a>
         </div>
