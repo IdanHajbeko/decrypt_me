@@ -16,10 +16,12 @@ body {
 }
 
 #top img {
-  position: absolute;
-  left: 0;
   top: 0;
-  
+  left: 0;
+  width: 100px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 9999; /* Ensure it is above all other elements */  
+  position: absolute;
 }
 /* texts */
 
@@ -134,7 +136,8 @@ li.dropdown {
   background-color: #BC908E;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgb(83, 81, 81);
-  z-index: 2;
+  z-index: 9999;
+  position: fixed;
 }
 
 .dropdown-content a {
