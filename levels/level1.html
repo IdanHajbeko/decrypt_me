@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Level 1</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="icon" type="image/x-icon" href="../images/logo.png">
+    <script src="../please_dont_use_mobile/check_mobile.js"></script>
+    <link rel="stylesheet" href="../styles/levels.css">
+  </head>
+  <body>
+    <div id="top" class="header">
+      <a href="../index.html"><img src="../images/logo.png" alt="logo" width="100" height="100" style="float: left;">
+      </a>
+      <h1>Level 1</h1>
+    </div>
+    <ul class="navbar center-navbar top-navbar">
+      <li><a href="../index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Levels</a>
+        <div class="dropdown-content">
+          <a href="#">Level 1</a>
+          <a href="#">Level 2</a>
+          <a href="#">Level 3</a>
+        </div>
+      </li>
+      <li><a href="../About_the_project/index.html">About this project</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Bitwise operators</a>
+        <div class="dropdown-content">
+          <a href="../operators/AND.html">AND &</a>
+          <a href="../operators/OR.html">OR |</a>
+          <a href="../operators/XOR.html">XOR ^</a>
+          <a href="../operators/NOT.html">NOT ~</a>
+          <a href="../operators/LeftShift.html">Left Shift <<</a>
+          <a href="../operators/RightShift.html">Right Shift >></a>
+        </div>
+      </li>
+      <li><a href="../about_me/index.html">About me</a></li>
+      <li><a href="mailto:idancode.hajbeko@gmail.com">Contact me</a></li>
+      <li><a href="https://keyserver.ubuntu.com/pks/lookup?search=idancode.hajbeko%40gmail.com&fingerprint=on&op=index">Public Key</a></li>
+    
+    </ul>
+    <hr>
+    <p>
+      This is the <span style="color: #7B3D4F;">first level</span>!<br>
+      Are you ready to do a bit of <span style="color: #3D7B69">hacking</span>?<br>
+      Take a pen and a paper and start using your brain
+    </p>
+    <h2 title="Text to decode">cipher text: ²Þê¾ÈÒÈZbè</h2>
+      <div class="form__group field">
+        <input id="inputField" type="input" class="form__field" placeholder="String_to_encrypt" name="String_to_encrypt" id='String_to_encrypt' required/>
+        <label for="String_to_encrypt" class="form__label">String to encrypt</label>
+      </div>
+      <h2>Encoded string:</h2>
+      <p id="Encrypted"></p>
+      <h2>Encoded String in Binary:</h2>
+      <p id="E_Binary" style="color: #11998e; font-size: 90%;"></p>
+      <h2>Encoded String in HEX</h2>
+      <p id="E_HEX" style="color: #A26769; font-size: 90%;"></p>
+      <h2>Encoded String in ASCII Codes</h2>
+      <p id="E_ASCII" style="color: #38ef7d; font-size: 90%;"></p>
+
+      <h2>String in Binary:</h2>
+      <p id="S_Binary" style="color: #11998e; font-size: 90%;"></p>
+      <h2>String in HEX</h2>
+      <p id="S_HEX" style="color: #A26769; font-size: 90%;"></p>
+      <h2>String in ASCII Codes</h2>
+      <p id="S_ASCII" style="color: #38ef7d; font-size: 90%;"></p>
+
+      <h2>Check decrypted text:</h2>
+        
+      <div class="form__group field">
+        <input id="Enter_decrypted_text" type="input" class="form__field" placeholder="Enter_decrypted_text" name="Enter_decrypted_text" required/>
+        <label for="Enter_decrypted_text" class="form__label">Enter decrypted text</label>
+      </div>
+      <br>
+      <h2 style="color: #D70040; display: none;" id="error">Incorrect!</h2>
+      <a href="#" class="button" id="next_level" style="display: none;">Next level</a>
+      <script src="script.js"></script>
+      <script>
+        document.getElementById('inputField').addEventListener('input', function() {
+          var encrypted_str = binaryToString(leftShiftBinary(stringToBinary(this.value), 1))
+            document.getElementById('Encrypted').innerText = encrypted_str;
+            document.getElementById('E_Binary').innerText = stringToBinary(encrypted_str);
+            document.getElementById('E_HEX').innerText = ascii_to_hexa(encrypted_str);
+            document.getElementById('E_ASCII').innerText = ASCIISentence(encrypted_str);
+            document.getElementById('S_Binary').innerText = stringToBinary(this.value);
+            document.getElementById('S_HEX').innerText = ascii_to_hexa(this.value);
+            document.getElementById('S_ASCII').innerText = ASCIISentence(this.value);
+        });
+      </script>
+      
+    </p>
+    <hr>
+
+  </body>
+</html>
