@@ -18,9 +18,9 @@ body {
 #top img {
   top: 0;
   left: 0;
-  width: 100px; /* Adjust width as needed */
-  height: auto; /* Maintain aspect ratio */
-  z-index: 9999; /* Ensure it is above all other elements */  
+  width: 100px; 
+  height: auto; 
+  z-index: 9999; 
   position: absolute;
 }
 /* texts */
