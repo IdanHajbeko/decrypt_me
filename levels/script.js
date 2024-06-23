@@ -58,18 +58,13 @@ function binaryToString(binaryStr) {
 
 }
 
-document.getElementById('Enter_decrypted_text').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-      e.preventDefault(); 
-      var inputText = this.value.trim();
-      if (inputText === "You_did-1t") {
-        document.getElementById('error').style.display = 'none';
-        document.getElementById('next_level').style.display = 'inline-block';
-      } else {
-        document.getElementById('error').style.display = 'inline-block';
-        document.getElementById('next_level').style.display = 'none';
-      }
-      this.value = "";
-    }
-  });
+function rot5(str) {
+    return str.replace(/[A-Za-z]/g, function(c) {
+        return String.fromCharCode(
+            (c <= "Z" ? 90 : 122) >= (c = c.charCodeAt(0) + 5) ? c : c - 26
+        );
+    });
+}
+
+
   

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Level 1</title>
+    <title>Level 3</title>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="icon" type="image/x-icon" href="../images/logo.png">
     <script src="../please_dont_use_mobile/check_mobile.js"></script>
@@ -13,7 +13,7 @@
     <div id="top" class="header">
       <a href="../index.html"><img src="../images/logo.png" alt="logo" width="100" height="100" style="float: left;">
       </a>
-      <h1>Level 1</h1>
+      <h1>Level 3</h1>
     </div>
     <ul class="navbar center-navbar top-navbar">
       <li><a href="../index.html">Home</a></li>
@@ -22,7 +22,7 @@
         <div class="dropdown-content">
           <a href="level1.html">Level 1</a>
           <a href="level2.html">Level 2</a>
-          <a href="#">Level 3</a>
+          <a href="level3.html">Level 3</a>
         </div>
       </li>
       <li><a href="../About_the_project/index.html">About this project</a></li>
@@ -44,12 +44,12 @@
     </ul>
     <hr>
     <p>
-      This is the <span style="color: #7B3D4F;">first level</span>!<br>
+      This is the <span style="color: #7B3D4F;">second level</span>!<br>
       Are you ready to do a bit of <span style="color: #3D7B69">hacking</span>?<br>
       Take a pen and a paper and start using your brain<br>
-      <em>Note:</em> sometimes you need to look on the bits
+      <em>Note:</em> sometimes it easier than you think 
     </p>
-    <h2 title="Text to decode">cipher text: ²Þê¾ÈÒÈZbè</h2>
+    <h2 title="Text to decode">cipher text: wty13 nx f ajwd nrutwyfsy ny fqxt pstb fx Hfjxfw Hnumjw ymnx nx wty5 qtq</h2>
       <div class="form__group field">
         <input id="inputField" type="input" class="form__field" placeholder="String_to_encrypt" name="String_to_encrypt" id='String_to_encrypt' required/>
         <label for="String_to_encrypt" class="form__label">String to encrypt</label>
@@ -78,37 +78,37 @@
       </div>
       <br>
       <h2 style="color: #D70040; display: none;" id="error">Incorrect!</h2>
-      <a href="level2.html" class="button" id="next_level" style="display: none;">Next level</a>
+      <a href="level3.html" class="button" id="next_level" style="display: none;">Next level</a>
       <script src="script.js"></script>
       <script>
         document.getElementById('Enter_decrypted_text').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-              e.preventDefault(); 
-              var inputText = this.value.trim();
-              if (inputText === "You_did-1t") {
-                document.getElementById('error').style.display = 'none';
-                document.getElementById('next_level').style.display = 'inline-block';
-              } else {
-                document.getElementById('error').style.display = 'inline-block';
-                document.getElementById('next_level').style.display = 'none';
-              }
-              this.value = "";
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            var inputText = this.value.trim();
+            if (inputText === "rot13 is a very important it also know as Caesar Cipher this is rot5 lol") {
+              document.getElementById('error').style.display = 'none';
+              document.getElementById('next_level').style.display = 'inline-block';
+            } else {
+              document.getElementById('error').style.display = 'inline-block';
+              document.getElementById('next_level').style.display = 'none';
             }
-          });
+            this.value = "";
+          }
+        });
+        
         document.getElementById('inputField').addEventListener('input', function() {
-          var encrypted_str = binaryToString(leftShiftBinary(stringToBinary(this.value), 1))
-            document.getElementById('Encrypted').innerText = encrypted_str;
-            document.getElementById('E_Binary').innerText = stringToBinary(encrypted_str);
-            document.getElementById('E_HEX').innerText = ascii_to_hexa(encrypted_str);
-            document.getElementById('E_ASCII').innerText = ASCIISentence(encrypted_str);
-            document.getElementById('S_Binary').innerText = stringToBinary(this.value);
-            document.getElementById('S_HEX').innerText = ascii_to_hexa(this.value);
-            document.getElementById('S_ASCII').innerText = ASCIISentence(this.value);
+          var encrypted_str = rot5(this.value);
+          document.getElementById('Encrypted').innerText = encrypted_str;
+          document.getElementById('E_Binary').innerText = stringToBinary(encrypted_str);
+          document.getElementById('E_HEX').innerText = ascii_to_hexa(encrypted_str);
+          document.getElementById('E_ASCII').innerText = ASCIISentence(encrypted_str);
+          document.getElementById('S_Binary').innerText = stringToBinary(this.value);
+          document.getElementById('S_HEX').innerText = ascii_to_hexa(this.value);
+          document.getElementById('S_ASCII').innerText = ASCIISentence(this.value);
         });
       </script>
       
     </p>
     <hr>
-
   </body>
 </html>
