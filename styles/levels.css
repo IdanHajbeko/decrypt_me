@@ -60,3 +60,11 @@
   #error, #next_level {
     display: none;
   }
+
+  .hide {
+    display: none;
+  }
+      
+  .hover_to_reveal:hover + .hide {
+    display:inline;
+  }

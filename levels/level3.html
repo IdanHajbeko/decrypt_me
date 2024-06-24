@@ -47,9 +47,10 @@
       This is the <span style="color: #7B3D4F;">second level</span>!<br>
       Are you ready to do a bit of <span style="color: #3D7B69">hacking</span>?<br>
       Take a pen and a paper and start using your brain<br>
-      <em>Note:</em> sometimes it easier than you think 
+      <em>Note:</em> w<span style="color:#7B3D4F">h</span>en you dont know what to do <span style="color:#7B3D4F">e</span>xpect the least e<span style="color: #7B3D4F">x</span>pected.<br>
+      <em class="hover_to_reveal">Hint:</em><span class="hide" style="color:#7B3D4F">look at every charcther in the hex and compere it to the encoded one. look one by one. you going the get two answers check wich one make sense</span>
     </p>
-    <h2 title="Text to decode">cipher text: wty13 nx f ajwd nrutwyfsy ny fqxt pstb fx Hfjxfw Hnumjw ymnx nx wty5 qtq</h2>
+    <h2 title="Text to decode">cipher text: ^YSU w_r[. tXYs ]Qy t__[ y_u s_]U tY]U</h2>
       <div class="form__group field">
         <input id="inputField" type="input" class="form__field" placeholder="String_to_encrypt" name="String_to_encrypt" id='String_to_encrypt' required/>
         <label for="String_to_encrypt" class="form__label">String to encrypt</label>
@@ -85,7 +86,7 @@
           if (e.key === 'Enter') {
             e.preventDefault();
             var inputText = this.value.trim();
-            if (inputText === "rot13 is a very important it also know as Caesar Cipher this is rot5 lol") {
+            if (inputText === "nice work. this may took you some time") {
               document.getElementById('error').style.display = 'none';
               document.getElementById('next_level').style.display = 'inline-block';
             } else {
@@ -97,14 +98,16 @@
         });
         
         document.getElementById('inputField').addEventListener('input', function() {
-          var encrypted_str = rot5(this.value);
-          document.getElementById('Encrypted').innerText = encrypted_str;
-          document.getElementById('E_Binary').innerText = stringToBinary(encrypted_str);
-          document.getElementById('E_HEX').innerText = ascii_to_hexa(encrypted_str);
-          document.getElementById('E_ASCII').innerText = ASCIISentence(encrypted_str);
-          document.getElementById('S_Binary').innerText = stringToBinary(this.value);
-          document.getElementById('S_HEX').innerText = ascii_to_hexa(this.value);
-          document.getElementById('S_ASCII').innerText = ASCIISentence(this.value);
+        var s_hex = ascii_to_hexa(this.value); 
+        var encrypted_hex = s_hex.replace(/6/g, "5")
+        var encrypted_str = hex_to_ascii(encrypted_hex);
+        document.getElementById('Encrypted').innerText = encrypted_str;
+        document.getElementById('E_Binary').innerText = stringToBinary(encrypted_str);
+        document.getElementById('E_HEX').innerText = encrypted_hex;
+        document.getElementById('E_ASCII').innerText = ASCIISentence(encrypted_str);
+        document.getElementById('S_Binary').innerText = stringToBinary(this.value);
+        document.getElementById('S_HEX').innerText = s_hex;
+        document.getElementById('S_ASCII').innerText = ASCIISentence(this.value);
         });
       </script>
       
