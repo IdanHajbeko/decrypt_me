@@ -24,15 +24,12 @@ function ASCIISentence(str) {
     return asciiArr.join(' ');
 }
 
-
 function stringToBinary(str) {
     return Array.from(str, char => {
         var binary = char.charCodeAt(0).toString(2);
         return binary.padStart(8, '0');
     }).join(' ');
 }
-
-
 
 function leftShiftBinary(binaryStr, shiftCount) {
     var shiftedBinary = binaryStr.split(' ').map(binary => {
@@ -42,12 +39,18 @@ function leftShiftBinary(binaryStr, shiftCount) {
     return shiftedBinary;
 }
 
-
 function rightShiftBinary(binaryStr, shiftCount) {
     var shiftedBinary = binaryStr.split(' ').map(binary => {
-        var shifted = parseInt(binary, 2) >>> shiftCount; 
-        return shifted.toString(2);
+        var shifted = parseInt(binary, 2) >>> shiftCount;
+        var shiftedStr = shifted.toString(2);
+        
+        while (shiftedStr.length < binary.length) {
+            shiftedStr = '0' + shiftedStr;
+        }
+
+        return shiftedStr;
     }).join(' ');
+
     return shiftedBinary;
 }
 
@@ -60,8 +63,6 @@ function binaryToString(binaryStr) {
     }).join('');
 
     return str;
-
-
 }
 
 function rot5(str) {
@@ -72,5 +73,12 @@ function rot5(str) {
     });
 }
 
-
-  
+function xorBinary(binaryStr1, binaryStr2) {
+    var bin1 = binaryStr1.split(' ');
+    var bin2 = binaryStr2.split(' ');
+    var xorResult = bin1.map((binary, index) => {
+        var xor = parseInt(binary, 2) ^ parseInt(bin2[index], 2);
+        return xor.toString(2).padStart(8, '0');
+    }).join(' ');
+    return xorResult;
+}

@@ -23,6 +23,8 @@
           <a href="level1.html">Level 1</a>
           <a href="level2.html">Level 2</a>
           <a href="level3.html">Level 3</a>
+          <a href="level4.html">level 4</a>
+          <a href="level5.html">level 5</a>
         </div>
       </li>
       <li><a href="../About_the_project/index.html">About this project</a></li>
@@ -45,11 +47,11 @@
     <hr>
     <p>
       This is the <span style="color: #7B3D4F;">second level</span>!<br>
-      Are you ready to do a bit of <span style="color: #3D7B69">hacking</span>?<br>
+      Are you ready to do a <span style="color: #884B58">bit</span> of <span style="color: #3D7B69">hacking</span>?<br>
       Take a pen and a paper and start using your brain<br>
       <em>Note:</em> sometimes it easier than you think 
     </p>
-    <h2 title="Text to decode">cipher text: wty13 nx f ajwd nrutwyfsy ny fqxt pstb fx Hfjxfw Hnumjw ymnx nx wty5 qtq</h2>
+    <h2 title="Text to decode">cipher text: wty13 nx ajwd nrutwyfsy ny nx fqxt pstbs fx Hfjxfw Hnumjw gzy ymnx nx wty5 qtq</h2>
       <div class="form__group field">
         <input id="inputField" type="input" class="form__field" placeholder="String_to_encrypt" name="String_to_encrypt" id='String_to_encrypt' required/>
         <label for="String_to_encrypt" class="form__label">String to encrypt</label>
@@ -85,7 +87,7 @@
           if (e.key === 'Enter') {
             e.preventDefault();
             var inputText = this.value.trim();
-            if (inputText === "rot13 is a very important it also know as Caesar Cipher this is rot5 lol") {
+            if (rot5(inputText) === "wty13 nx ajwd nrutwyfsy ny nx fqxt pstbs fx Hfjxfw Hnumjw gzy ymnx nx wty5 qtq") {
               document.getElementById('error').style.display = 'none';
               document.getElementById('next_level').style.display = 'inline-block';
             } else {

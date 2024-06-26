@@ -23,6 +23,8 @@
           <a href="level1.html">Level 1</a>
           <a href="level2.html">Level 2</a>
           <a href="level3.html">Level 3</a>
+          <a href="level4.html">level 4</a>
+          <a href="level5.html">level 5</a>
         </div>
       </li>
       <li><a href="../About_the_project/index.html">About this project</a></li>
@@ -44,8 +46,8 @@
     </ul>
     <hr>
     <p>
-      This is the <span style="color: #7B3D4F;">second level</span>!<br>
-      Are you ready to do a bit of <span style="color: #3D7B69">hacking</span>?<br>
+      This is the <span style="color: #7B3D4F;">third level</span>!<br>
+      Are you ready to do a <span style="color: #884B58">bit</span> of <span style="color: #3D7B69">hacking</span>?<br>
       Take a pen and a paper and start using your brain<br>
       <em>Note:</em> w<span style="color:#7B3D4F">h</span>en you dont know what to do <span style="color:#7B3D4F">e</span>xpect the least e<span style="color: #7B3D4F">x</span>pected.<br>
       <em class="hover_to_reveal">Hint:</em><span class="hide" style="color:#7B3D4F">look at every charcther in the hex and compere it to the encoded one. look one by one. you going the get two answers check wich one make sense</span>
@@ -79,28 +81,37 @@
       </div>
       <br>
       <h2 style="color: #D70040; display: none;" id="error">Incorrect!</h2>
-      <a href="level3.html" class="button" id="next_level" style="display: none;">Next level</a>
+      <a href="level4.html" class="button" id="next_level" style="display: none;">Next level</a>
       <script src="script.js"></script>
       <script>
-        document.getElementById('Enter_decrypted_text').addEventListener('keypress', function(e) {
-          if (e.key === 'Enter') {
-            e.preventDefault();
-            var inputText = this.value.trim();
-            if (inputText === "nice work. this may took you some time") {
-              document.getElementById('error').style.display = 'none';
-              document.getElementById('next_level').style.display = 'inline-block';
-            } else {
-              document.getElementById('error').style.display = 'inline-block';
-              document.getElementById('next_level').style.display = 'none';
-            }
-            this.value = "";
+      var s_hex;
+      var encrypted_hex;
+      var encrypted_str;
+
+      function encode(str) {
+        s_hex = ascii_to_hexa(str); 
+        encrypted_hex = s_hex.replace(/6/g, "5");
+        encrypted_str = hex_to_ascii(encrypted_hex);
+        return encrypted_str;
+      }
+
+      document.getElementById('Enter_decrypted_text').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          var inputText = this.value.trim();
+          if (encode(inputText) === "^YSU w_r[. tXYs ]Qy t__[ y_u s_]U tY]U") {
+            document.getElementById('error').style.display = 'none';
+            document.getElementById('next_level').style.display = 'inline-block';
+          } else {
+            document.getElementById('error').style.display = 'inline-block';
+            document.getElementById('next_level').style.display = 'none';
           }
-        });
-        
-        document.getElementById('inputField').addEventListener('input', function() {
-        var s_hex = ascii_to_hexa(this.value); 
-        var encrypted_hex = s_hex.replace(/6/g, "5")
-        var encrypted_str = hex_to_ascii(encrypted_hex);
+          this.value = "";
+        }
+      });
+
+      document.getElementById('inputField').addEventListener('input', function() {
+        encrypted_str = encode(this.value);
         document.getElementById('Encrypted').innerText = encrypted_str;
         document.getElementById('E_Binary').innerText = stringToBinary(encrypted_str);
         document.getElementById('E_HEX').innerText = encrypted_hex;
@@ -108,7 +119,8 @@
         document.getElementById('S_Binary').innerText = stringToBinary(this.value);
         document.getElementById('S_HEX').innerText = s_hex;
         document.getElementById('S_ASCII').innerText = ASCIISentence(this.value);
-        });
+      });
+
       </script>
       
     </p>
