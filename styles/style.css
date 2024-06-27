@@ -197,3 +197,15 @@ a.button{
   margin:0.4em auto;
 }
 }
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content {
+  flex: 1;
+}
+.image {
+  flex-shrink: 0;
+  margin-left: 20px;
+}

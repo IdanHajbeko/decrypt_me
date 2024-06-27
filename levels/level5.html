@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Level 4</title>
+    <title>Level 5</title>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="icon" type="image/x-icon" href="../images/logo.png">
     <script src="../please_dont_use_mobile/check_mobile.js"></script>
@@ -13,7 +13,7 @@
     <div id="top" class="header">
       <a href="../index.html"><img src="../images/logo.png" alt="logo" width="100" height="100" style="float: left;">
       </a>
-      <h1>Level 4</h1>
+      <h1>Level 5</h1>
     </div>
     <ul class="navbar center-navbar top-navbar">
       <li><a href="../index.html">Home</a></li>
@@ -46,14 +46,13 @@
     </ul>
     <hr>
     <p>
-      This is the <span style="color: #7B3D4F;">fourth level</span>!<br>
+      This is the <span style="color: #7B3D4F;">fifth level</span>!<br>
       Are you ready to do a <span style="color: #884B58">bit</span> of <span style="color: #3D7B69">hacking</span>?<br>
       Take a pen and a paper and start using your brain<br>
-      <em>Note:</em> solve it bit by bit
+      <em>Note:</em> identify this encoding algorithm<br>
+      <em class="hover_to_reveal">Hint:</em><span class="hide" style="color:#7B3D4F">its base64</span>
     </p>
-    <div class="container">
-    <div class="content">
-    <h2 title="Text to decode">cipher text: üØÛõ`Ûõ`×ë`ÊÃúÑöÛüÏ`ÑÒÏ</h2>
+    <h2 title="Text to decode">cipher text: VG1salpTQkpJR2h2Y0dVZ2RHaHBjeUJrYVdSdUozUWdkR0ZyWlNCaGN5QnRkV05vSUhScGJXVWdZWE1nYkdWMlpXd2dOQT09</h2>
       <div class="form__group field">
         <input id="inputField" type="input" class="form__field" placeholder="String_to_encrypt" name="String_to_encrypt" id='String_to_encrypt' required/>
         <label for="String_to_encrypt" class="form__label">String to encrypt</label>
@@ -83,26 +82,14 @@
       <br>
       <h2 style="color: #D70040; display: none;" id="error">Incorrect!</h2>
       <a href="level5.html" class="button" id="next_level" style="display: none;">Next level</a>
-        </div>
-    <img src="../images/level_4_flow_chart.png" alt="Description of image" class="image" width="270" height="auto">
-
-    </div>
       <script src="script.js"></script>
       <script>
-        var S_Binary;
-        var after_xor;
-        function encode(str){
-          S_Binary = stringToBinary(str);
-          var S_B_left_shift = leftShiftBinary(S_Binary, 1)
-          after_xor = xorBinary(S_Binary, S_B_left_shift);
-          var encrypted_str = binaryToString(after_xor);
-          return encrypted_str;
-        }
+
         document.getElementById('Enter_decrypted_text').addEventListener('keypress', function(e) {
           if (e.key === 'Enter') {
             e.preventDefault();
             var inputText = this.value.trim();
-            if (encode(inputText) === "üØÛõ`Ûõ`×ë`ÊÃúÑöÛüÏ`ÑÒÏ") {
+            if (String(btoa(btoa(inputText))) === "VG1salpTQkpJR2h2Y0dVZ2RHaHBjeUJrYVdSdUozUWdkR0ZyWlNCaGN5QnRkV05vSUhScGJXVWdZWE1nYkdWMlpXd2dOQT09") {
               document.getElementById('error').style.display = 'none';
               document.getElementById('next_level').style.display = 'inline-block';
             } else {
@@ -114,12 +101,12 @@
         });
         
         document.getElementById('inputField').addEventListener('input', function() {
-        encrypted_str = encode(this.value);
+        var encrypted_str = btoa(btoa(this.value));
         document.getElementById('Encrypted').innerText = encrypted_str;
-        document.getElementById('E_Binary').innerText = after_xor;
+        document.getElementById('E_Binary').innerText = stringToBinary(encrypted_str);
         document.getElementById('E_HEX').innerText =  ascii_to_hexa(encrypted_str);
         document.getElementById('E_ASCII').innerText = ASCIISentence(encrypted_str);
-        document.getElementById('S_Binary').innerText = S_Binary;
+        document.getElementById('S_Binary').innerText = stringToBinary(this.value);
         document.getElementById('S_HEX').innerText = ascii_to_hexa(this.value);
         document.getElementById('S_ASCII').innerText = ASCIISentence(this.value);
         });
