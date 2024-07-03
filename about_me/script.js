@@ -5,7 +5,7 @@ const COMMANDS = {
   about:
     "Hello 👋,<br>I'm Idan Hajbeko, also known as idancode, and I love hacking and programming.<br>Most of the stuff I create has errors, but who doesn't?",
   skills:
-    '<span class="code">Languages:</span> Python, C++, C, HTML, CSS, JavaScript, batch, PHP<br>\
+    '<span class="code">Languages:</span> Python, C++, C, HTML, CSS, JavaScript, batch, PHP, golang<br>\
     <span class="code">Technologies:</span> SQL, MySQL,Kali Linux, Metasploit, IDA, Apache, Burp Suite, Docker<br>\
     <span class="code">Frameworks:</span> Bootstrap, Flask, Node.js(a little), TensorFlow<br>\
     <span class="code">Subjects:</span> Cybersecurity, cryptography, Hacking, OSINT, malware analysis, malware development Machine Learning, Data Science, Data Structures and Algorithms (DSA), Artificial Intelligence, Arduino ', 
