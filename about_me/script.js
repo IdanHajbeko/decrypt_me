@@ -5,10 +5,10 @@ const COMMANDS = {
   about:
     "Hello 👋,<br>I'm Idan Hajbeko, also known as idancode, and I love hacking and programming.<br>Most of the stuff I create has errors, but who doesn't?",
   skills:
-    '<span class="code">Languages:</span> Python, C++, C, HTML, CSS, JavaScript, batch, PHP, golang<br>\
-    <span class="code">Technologies:</span> SQL, MySQL,Kali Linux, Metasploit, IDA, Apache, Burp Suite, Docker<br>\
-    <span class="code">Frameworks:</span> Bootstrap, Flask, Node.js(a little), TensorFlow<br>\
-    <span class="code">Subjects:</span> Cybersecurity, cryptography, Hacking, OSINT, malware analysis, malware development Machine Learning, Data Science, Data Structures and Algorithms (DSA), Artificial Intelligence, Arduino ', 
+    '<span class="code">Languages:</span> Python, C++, C, C#, HTML, CSS, JavaScript, batch, PHP, golang, R<br>\
+    <span class="code">Technologies:</span> SQL, MySQL, LiteSQL, Kali Linux, Metasploit, IDA, Apache, Burp Suite, Docker, unity, and so much more<br>\
+    <span class="code">Frameworks:</span> Bootstrap, Flask, Node.js(a little), Django, TensorFlow, PyTorch, Next.js, React, and so much more<br>\
+    <span class="code">Subjects:</span> Cybersecurity, cryptography, Hacking, OSINT, malware analysis, malware development Machine Learning, Data Science, Data Structures and Algorithms (DSA), Artificial Intelligence, Arduino, and so much more', 
   education:
     "Just finished middle school.<br>But I did learn cybersecurity at university in the Israel Cyber Campus course for two years",
   experience:
